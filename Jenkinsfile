@@ -3,18 +3,18 @@ pipeline {
     stages {
         stage('Clone Repositry & clean') {
             steps {
-                sh 'git clone https://github.com/sunilmaury/Simple_Java.git'
-                sh 'mvn clean -f Simple_Java'
+                sh 'git clone https://github.com/sunilmaury/jenkinsfile.git'
+                sh 'mvn clean -f jenkinsfile'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test -f Simple_Java'
+                sh 'mvn test -f jenkinsfile'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'mvn package -f Simple_Java'
+                sh 'mvn package -f jenkinsfile'
             }
         }
     }
